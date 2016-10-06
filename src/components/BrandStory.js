@@ -1,10 +1,7 @@
 import React from 'react';
-<<<<<<< HEAD
 import ReactDOM from 'react-dom';
 // var css = require('App.css')
 =======
->>>>>>> 76a97f4b7f5dcf8f98199dcac1e225d8d599b126
-
 
 
 var headStyle = {
