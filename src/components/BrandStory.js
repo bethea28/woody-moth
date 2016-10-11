@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 // var css = require('App.css')
-=======
 
 
 var headStyle = {
@@ -10,7 +9,9 @@ var headStyle = {
   // color:"linear-gradient(blue,yellow)",
   borderStyle:'solid black ' ,
   borderWidth:5,
-  borderColor:'orange',
+  position:'relative',
+  fontWeight:"bold",
+  right:300
 
 
 
@@ -18,40 +19,47 @@ var headStyle = {
 
 var paraStyle = {
   fontFamily:"newRoman",
-  fontSize:20,
+  fontSize:18,
+  fontWeight:"bold",
   color:"black",
+   lineHeight: 2,
   backgroundSize: 900,
   backgroundRepeat: "no-Repeat",
   wordSpacing: 2,
-    transform: "rotate(-3deg)",
+    // transform: "rotate(-3deg)",
     borderRadius:20
+
 
  };
 var background ={
-    backgroundImage:'url(http://static.wixstatic.com/media/120e3e_24b164636d158c4fcd64994d2f30596a.jpg_srz_1299_979_85_22_0.50_1.20_0.00_jpg_srz)',
-    position: "relative",
-    bottom: 50
+    backgroundImage:'url(http://i.imgur.com/UXw1r33.jpg)',
+   // backgroundPositi  ,
+
 };
 
  var imgStyle= {
-  width:375,
-  height:300,
-  position: "relative",
-  marginLeft:280,
-  marginTop: -25,
-  transform: "rotate(-20deg)",
+  // width:375,
+  // height:300,
+  // position: "relative",
+  // marginLeft:280,
+  // transform: "rotate(-20deg)",
 
+ }
+ var  hr={
+  backgroundColor:"black"
  }
             
 var BrandStory = React.createClass({
   render: function() {
     return (
-      <div className>
+      <div style ={background}>
 
-          <div style={background}>
-          </div>
-        <center><h1 style={headStyle}>The Brand</h1></center>
-        <hr style={{backgroundColor:'black'}}/ >
+         
+        <center><h1 style={headStyle}>The Moth Brand</h1></center>
+
+        <hr style ={hr}/>
+
+
         <center><p style={paraStyle}> Woody Moth began in the summer of 2012. In the midst of a monumental wardrobe <br/>
 
 crisis, I was attempting to transition from Bryan
@@ -130,6 +138,7 @@ and professional in the same outfit.<br/>
 <div>
 	<center><br/><h1 style={headStyle}>The Moth</h1></center>
 </div>
+  <hr/>
 
 
 For centuries the moth has symbolized transformation and has been a symbol of<br/>

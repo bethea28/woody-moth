@@ -1,80 +1,197 @@
 'use strict'
- 
+import $ from 'jquery'
 import React from 'react'
 import {ApSlideshow, ApSpinnerStyle, ApSlideshowStyle} from 'apeman-react-slideshow'
+var Carousel = require('nuka-carousel');
 
 
 var imgStyle = {
-	display:"inline",
-	position:"relative",
-	borderRadius:10,
-	right: -650,
-	top:-15
+	// display:"inline",
+	// position:"relative",
+	// borderRadius:10,
+	// right: -650,
+	// top:-15
+	maxWidth:750,
+	// overflow: 'hidden'
+  position:'relative',
+	margin: 'auto',
+  bottom:30
+
 }
 var imgBack={
- backgroundImage: 'url( http://wallpaperwarrior.com/wp-content/uploads/2016/07/Wood-Wallpaper-3.jpg )',
-backgroundColor:'gold'  
+	
+	height: "auto",
+  // transform:'rotate(10deg)',
+  // borderRadius:5,
+  borderColor:"black", 
+  backgroundPosition: "left center",
+  backgroundRepeat:'repeat-x',
+  backgroundRadius:30,
+} 
 
-}	
+var img ={
+  borderRadius:200, 
+   borderWidth:5, 
+    borderStyle:"groove"
+}
  
-const LookBookPage = React.createClass({
-  render () {
+ var title={
+   fontFamily:"newRoman",
+   fontSize:80,
+   fontSize:80,
+   position:'relative',
+   
+
+
+}
+
+var slogan={
+     fontFamily:"papyrus",
+     fontSize:60,
+  // writingMode: "tb-rl",
+  position:'relative',
+  // right:350,
+  // transform: "rotate(270deg)",
+  // lineHeight:3,
+  color:'hsl(57, 79%, 37%)'
+
+}
+var span ={
+  color:'black'
+}
+
+ 
+var look ={
+   fontFamily:"papyrus",
+  color:"black",
+  fontSize:50
+
+}
+
+   
+  const LookBookPage = React.createClass({
+    mixins: [Carousel.ControllerMixin],
+   
+    shouldComponentUpdate(nextProps, nextState) {
+      return shallowCompare(this, nextProps, nextState);
+  },
+
+    setHeight: function(){
+      slidesToScroll: React.PropTypes.oneOfType([
+    React.PropTypes.number,
+    React.PropTypes.oneOf(['auto'])
+  ])
+  
+
+  },
+
+
+  render() {
     return (
-      <div style={imgBack}>
-     			<div style={imgStyle}>
-			        <ApSlideshowStyle style={{borderRadius:20}} />
-			        <ApSlideshow images={[
-			                    'http://i.imgur.com/7p2qzE1.jpg',
-			                    'http://i.imgur.com/4xjionq.jpg',
-			                    'http://i.imgur.com/7p2qzE1.jpg',
-			                    './images/03.jpg',
-			                    './images/04.jpg',
-			                    './images/05.jpg',
-			                    './images/06.jpg',
-			                    './images/07.jpg'
-			                ]}	
+      <div style={{display:"flex", flexDirection:"column"}}>
+         <center><h1 style = {title}> Woody Moth</h1></center> 
+         <center><h2 style={slogan}>if you WOOD...you could!</h2></center>
+        <div style={imgBack}>
+        </div>
+        <br/>
+        <br/>
+        <br/>
 
-			                     repeat={ true }
-			                     height={ 600 }
-			                     interval={100000}
-			                     width={ 400 }
-			                     style={
-			                     	{borderRadius: 50},
-			                     	{dispaly:'inline-block'}
-			                     }
-			        />
-			
-		   
-		   		</div>
-		   		<div >
-			        <ApSlideshowStyle />
-			        <ApSlideshow images={[
-			                    'http://i.imgur.com/7p2qzE1.jpg',
-			                    './images/01.jpg',
-			                    'http://i.imgur.com/7p2qzE1.jpg',
-			                    './images/03.jpg',
-			                    './images/04.jpg',
-			                    './images/05.jpg',
-			                    './images/06.jpg',
-			                    './images/07.jpg'
-			                ]}
-			                     repeat={ true }
-			                     height={ 600 }
-			                     width={ 400 }
-			                     style={
-			                     	{borderRadius: 30},
-			                     	{display:'inline-block'}
-			                     }
-			        />
-			 	</div>
-		
+   	<div style={{display:'flex'},{flexDirection:'columnReverse'}}>
+      <Carousel slideWidtht={200}   style={imgStyle}>
+        <img style = {img} src="http://i.imgur.com/7p2qzE1.jpg"/>
+        <img style={img} src="http://i.imgur.com/4xjionq.jpg"/>
+        <img style={img} src="http://i.imgur.com/Wn2RyeC.jpg"/>
+        <img style={img} src="http://i.imgur.com/oTinMm5.jpg"/>
+        <img style={img} src="http://placehold.it/1000x400/ffffff/c0392b/&text=slide5"/>
+        <img style={img} src="http://placehold.it/1000x400/ffffff/c0392b/&text=slide6"/>
+      </Carousel>
+      <div style= {imgBack}>
+       
+      
+     
+       
+        
 
-      </div>
-
-
+       </div>
+    </div>
+    <center><h1 style={look}> style! </h1></center>
+  </div>
     )
   }
-})
- 
+});
+
+
+
+  // .carousel-inner > .item > img,
+  // .carousel-inner > .item > a > img {
+  //     width: 70%;
+  //     height:30%;
+  //     margin:auto;
+  // }
+
+// var LookBookPage = React.createClass({
+//   render:function(){
+//     return (
+//         <div>
+//           <div id="myCarousel" className="carousel slide" data-ride="carousel">
+
+//             <ol className="carousel-indicators">
+//               <li data-target="#myCarousel" data-slide-to="0" className="active"></li>
+//               <li data-target="#myCarousel" data-slide-to="1"></li>
+//               <li data-target="#myCarousel" data-slide-to="2"></li>
+//               <li data-target="#myCarousel" data-slide-to="3"></li>
+//             </ol>
+
+
+//             <div className="carousel-inner" role="listbox">
+//               <div className="item active">
+//                 <img src="img_chania.jpg" alt="Chania"/>
+//                 <div className="carousel-caption">
+//                   <h3>Chania</h3>
+//                   <p>The atmosphere in Chania has a touch of Florence and Venice.</p>
+//                 </div>
+//               </div>
+
+//               <div className="item">
+//                 <img src="http://i.imgur.com/LPYCSKC.png" alt="Chania"/>
+//                 <div className="carousel-caption">
+//                   <h3>Chania</h3>
+//                   <p>The atmosphere in Chania has a touch of Florence and Venice.</p>
+//                 </div>
+//               </div>
+
+//               <div className="item">
+//                 <img src="http://i.imgur.com/LPYCSKC.png" alt="Flower"/>
+//                 <div className="carousel-caption">
+//                   <h3>Flowers</h3>
+//                   <p>Beatiful flowers in Kolymbari, Crete.</p>
+//                 </div>
+//               </div>
+
+//               <div className="item">
+//                 <img src="http://i.imgur.com/LPYCSKC.png" alt="Flower"/>
+//                 <div className="carousel-caption">
+//                   <h3>Flowers</h3>
+//                   <p>Beatiful flowers in Kolymbari, Crete.</p>
+//                 </div>
+//               </div>
+//             </div>
+
+
+//             <a className="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+//               <span className="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+//               <span className="sr-only">Previous</span>
+//             </a>
+//             <a className="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+//               <span className="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+//               <span className="sr-only">Next</span>
+//             </a>
+//           </div>
+//         </div>
+
+//       )
+//     }
+// })
 
 export default LookBookPage
