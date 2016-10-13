@@ -88,7 +88,7 @@ var look ={
 
   render() {
     return (
-      <div style={{display:"flex", flexDirection:"column"}}>
+      <div style={{display:"flex", flexDirection:"columnReverse"}}>
          <center><h1 style = {title}> Woody Moth</h1></center> 
          <center><h2 style={slogan}>if you WOOD...you could!</h2></center>
         <div style={imgBack}>
