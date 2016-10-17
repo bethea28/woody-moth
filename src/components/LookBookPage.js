@@ -88,7 +88,7 @@ var look ={
 
   render() {
     return (
-      <div style={{display:"flex", flexDirection:"columnReverse"}}>
+      <div >
          <center><h1 style = {title}> Woody Moth</h1></center> 
          <center><h2 style={slogan}>if you WOOD...you could!</h2></center>
         <div style={imgBack}>
@@ -97,14 +97,15 @@ var look ={
         <br/>
         <br/>
 
-   	<div style={{display:'flex'},{flexDirection:'columnReverse'}}>
+   	<div >
       <Carousel slideWidtht={200}   style={imgStyle}>
         <img style = {img} src="http://i.imgur.com/7p2qzE1.jpg"/>
         <img style={img} src="http://i.imgur.com/4xjionq.jpg"/>
         <img style={img} src="http://i.imgur.com/Wn2RyeC.jpg"/>
         <img style={img} src="http://i.imgur.com/oTinMm5.jpg"/>
-        <img style={img} src="http://placehold.it/1000x400/ffffff/c0392b/&text=slide5"/>
-        <img style={img} src="http://placehold.it/1000x400/ffffff/c0392b/&text=slide6"/>
+        <img style={img} src="http://i.imgur.com/7FggW7n.jpg"/>
+        <img style={img} src="http://i.imgur.com/OuweeYh.jpg"/>
+        <img style={img} src="http://i.imgur.com/Kc96idf.jpg"/>
       </Carousel>
       <div style= {imgBack}>
        
