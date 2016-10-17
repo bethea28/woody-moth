@@ -90,7 +90,6 @@ var look ={
     return (
       <div >
          <center><h1 style = {title}> Woody Moth</h1></center> 
-         <center><h2 style={slogan}>if you WOOD...you could!</h2></center>
         <div style={imgBack}>
         </div>
         <br/>
@@ -116,7 +115,7 @@ var look ={
 
        </div>
     </div>
-    <center><h1 style={look}> style! </h1></center>
+    <center><h1 style={look}> Look Book! </h1></center>
   </div>
     )
   }
