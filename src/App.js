@@ -24,7 +24,7 @@ var App = React.createClass({
         <Header />
       </nav>
 
-      <div className="container">
+      <div className="container-fluid">
         {this.props.children}
       </div>
 
